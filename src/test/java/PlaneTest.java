@@ -18,4 +18,9 @@ public class PlaneTest {
     public void canGetPlaneType(){
         assertEquals(PlaneType.AIRBUSA300,plane.getType());
     }
+
+    @Test
+    public void canGetAirLine(){
+        assertEquals(AirLine.EASYJET,plane.getAirLine());
+    }
 }
