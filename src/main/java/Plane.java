@@ -27,4 +27,8 @@ public class Plane {
     public int countPassengers(){
         return this.passengers.size();
     }
+
+    public ArrayList<Passenger> getPassengers() {
+        return passengers;
+    }
 }
