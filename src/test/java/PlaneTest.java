@@ -23,4 +23,10 @@ public class PlaneTest {
     public void canGetAirLine(){
         assertEquals(AirLine.EASYJET,plane.getAirLine());
     }
+
+    @Test
+    public void canAddPassenger(){
+        plane.addPassenger(passenger);
+        assertEquals(1,plane.countPassengers());
+    }
 }

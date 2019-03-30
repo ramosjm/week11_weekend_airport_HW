@@ -19,4 +19,12 @@ public class Plane {
     public AirLine getAirLine(){
         return this.airLine;
     }
+
+    public void addPassenger(Passenger passenger){
+        this.passengers.add(passenger);
+    }
+
+    public int countPassengers(){
+        return this.passengers.size();
+    }
 }
