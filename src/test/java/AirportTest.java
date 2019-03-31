@@ -8,6 +8,10 @@ public class AirportTest {
     private Airport airport;
     private Plane plane;
     private Passenger passenger;
+    private Passenger passenger1;
+    private Passenger passenger2;
+    private Plane testPlane;
+    private Flight testFlight;
 
     @Before
 
@@ -15,6 +19,10 @@ public class AirportTest {
         airport = new Airport(AirportCode.EDI);
         plane = new Plane(PlaneType.BOING767,AirLine.EASYJET);
         passenger = new Passenger("Steven Middleton");
+        passenger1 = new Passenger("Eva Middleton");
+        passenger2 = new Passenger("Craig Millar");
+        testPlane = new Plane(PlaneType.BOING767,AirLine.EASYJET);
+        testFlight = new Flight(testPlane,20,"Amsterdam",500);
     }
 
     @Test
@@ -64,4 +72,20 @@ public class AirportTest {
         airport.sellTicket(passenger,flight);
         assertEquals(1,plane.countPassengers());
     }
+    @Test
+    public void findPassengerTrue(){
+        testPlane.addPassenger(passenger);
+        testPlane.addPassenger(passenger1);
+        testPlane.addPassenger(passenger2);
+        assertEquals(true,airport.passengerOnFlight(passenger1,testFlight));
+    }
+
+    @Test
+    public void findPassengerFalse(){
+        testPlane.addPassenger(passenger);
+        testPlane.addPassenger(passenger2);
+        assertEquals(false,airport.passengerOnFlight(passenger1,testFlight));
+
+    }
+
 }

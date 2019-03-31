@@ -41,4 +41,13 @@ public class Airport {
 
     }
 
+    public boolean passengerOnFlight(Passenger passenger, Flight flight) {
+        Plane plane= flight.getPlane();
+        ArrayList passengers = plane.getPassengers();
+        if (passengers.indexOf(passenger)>=0) {
+                return true;
+            }
+        return false;
+    }
+
 }
